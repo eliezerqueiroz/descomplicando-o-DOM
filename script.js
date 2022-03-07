@@ -56,3 +56,22 @@ function removeProduct(event){
     event.target.remove();
 }
 
+//capturando o botão cadastrar
+const addButton = document.getElementById('btn-add');
+//adicionar um evento de click no botão "cadastrar"
+addButton.addEventListener('click', registerNewProduct);
+//desenvolver uma função que adicione o novo produto ao array
+function registerNewProduct(event){
+    event.preventDefault();
+    //capturar os dados do formulário
+    const getId = document.querySelector('#input-id').value;
+    const getName = document.querySelector('#input-name').value;
+    const getPrice = document.querySelector('#input-price').value;
+    const newProduct = {
+        id: parseInt(getId),
+        name: getName,
+        price: parseInt(getPrice),
+    };
+    techProducts.push(newProduct);
+    console.log(techProducts);
+}
